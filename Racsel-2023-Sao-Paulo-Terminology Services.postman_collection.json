@@ -1,0 +1,772 @@
+{
+	"info": {
+		"_postman_id": "1416863d-f072-4bfc-b4cc-124a79980eb8",
+		"name": "Terminology Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22668638"
+	},
+	"item": [
+		{
+			"name": "Terminology Service Capability",
+			"item": [
+				{
+					"name": "Capabilty Statement for Terminology Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/metadata?mode=terminology",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"metadata"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "terminology"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CodeSystem",
+			"item": [
+				{
+					"name": "ST-01 Add a new CodeSystem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"CodeSystem\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">CodeSystem ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/codesystem/tesauro\",\r\n    \"version\": \"20231112\",\r\n    \"name\": \"Tesauro_123\",\r\n    \"title\": \"Tesauro conceptos clínicos\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"caseSensitive\": false,\r\n    \"valueSet\": \"http://acme.cl/valueset/tesauro\",\r\n    \"hierarchyMeaning\": \"grouped-by\",\r\n    \"compositional\": false,\r\n    \"versionNeeded\": false,\r\n    \"content\": \"complete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/CodeSystem",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a new CodeSystem v1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"CodeSystem\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">CodeSystem ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/codesystem/tesauro\",\r\n    \"version\": \"20230101\",\r\n    \"name\": \"Tesauro_123\",\r\n    \"title\": \"Tesauro conceptos clínicos\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"caseSensitive\": false,\r\n    \"valueSet\": \"http://acme.cl/valueset/tesauro\",\r\n    \"hierarchyMeaning\": \"grouped-by\",\r\n    \"compositional\": false,\r\n    \"versionNeeded\": false,\r\n    \"content\": \"complete\",\r\n    \"concept\": [\r\n        {\r\n            \"code\": \"01\",\r\n            \"display\": \"insuficiencia aórtica\"\r\n        },\r\n        {\r\n            \"code\": \"02\",\r\n            \"display\": \"parkinson\"\r\n        },\r\n        {\r\n            \"code\": \"03\",\r\n            \"display\": \"apendicitis\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{fhir}}/CodeSystem",
+									"host": [
+										"{{fhir}}"
+									],
+									"path": [
+										"CodeSystem"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Add a new CodeSystem v2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"CodeSystem\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">CodeSystem ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/codesystem/tesauro\",\r\n    \"version\": \"20230202\",\r\n    \"name\": \"Tesauro_123\",\r\n    \"title\": \"Tesauro conceptos clínicos\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"caseSensitive\": false,\r\n    \"valueSet\": \"http://acme.cl/valueset/tesauro\",\r\n    \"hierarchyMeaning\": \"grouped-by\",\r\n    \"compositional\": false,\r\n    \"versionNeeded\": false,\r\n    \"content\": \"complete\",\r\n    \"concept\": [\r\n        {\r\n            \"code\": \"01\",\r\n            \"display\": \"insuficiencia aórtica\"\r\n        },\r\n        {\r\n            \"code\": \"02\",\r\n            \"display\": \"parkinson\"\r\n        },\r\n        {\r\n            \"code\": \"03\",\r\n            \"display\": \"apendicitis\"\r\n        },\r\n        {\r\n            \"code\": \"04\",\r\n            \"display\": \"litiasis renal\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{fhir}}/CodeSystem",
+									"host": [
+										"{{fhir}}"
+									],
+									"path": [
+										"CodeSystem"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Add a new CodeSystem v3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resourceType\": \"CodeSystem\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">CodeSystem ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/codesystem/tesauro\",\r\n    \"version\": \"20230303\",\r\n    \"name\": \"Tesauro_123\",\r\n    \"title\": \"Tesauro conceptos clínicos\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"caseSensitive\": false,\r\n    \"valueSet\": \"http://acme.cl/valueset/tesauro\",\r\n    \"hierarchyMeaning\": \"grouped-by\",\r\n    \"compositional\": false,\r\n    \"versionNeeded\": false,\r\n    \"content\": \"complete\",\r\n    \"concept\": [\r\n        {\r\n            \"code\": \"01\",\r\n            \"display\": \"insuficiencia aórtica\",\r\n            \"definition\": \"La insuficiencia aórtica se produce por el cierre defectuoso de la válvula aórtica que genera una fuga...\",\r\n            \"designation\": [\r\n                {\r\n                    \"language\": \"es\",\r\n                    \"use\": {\r\n                        \"system\": \"http://snomed.info/sct\",\r\n                        \"code\": \"900000000000003001\",\r\n                        \"display\": \"Fully Specified Name\"\r\n                    },\r\n                    \"value\": \"insuficiencia valvular aortica\"\r\n                },\r\n                {\r\n                    \"language\": \"es\",\r\n                    \"use\": {\r\n                        \"system\": \"http://snomed.info/sct\",\r\n                        \"code\": \"900000000000013009\",\r\n                        \"display\": \"Synonym\"\r\n                    },\r\n                    \"value\": \"regurgitacion aortica\"\r\n                },\r\n                {\r\n                    \"language\": \"es\",\r\n                    \"use\": {\r\n                        \"system\": \"http://snomed.info/sct\",\r\n                        \"code\": \"900000000000013009\",\r\n                        \"display\": \"Synonym\"\r\n                    },\r\n                    \"value\": \"IAO\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"code\": \"02\",\r\n            \"display\": \"parkinson\"\r\n        },\r\n        {\r\n            \"code\": \"03\",\r\n            \"display\": \"apendicitis\"\r\n        },\r\n        {\r\n            \"code\": \"04\",\r\n            \"display\": \"litiasis renal\"\r\n        },\r\n        {\r\n            \"code\": \"05\",\r\n            \"display\": \"colecistitis aguda\"\r\n        },\r\n        {\r\n            \"code\": \"06\",\r\n            \"display\": \"fiebre amarilla\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{fhir}}/CodeSystem",
+									"host": [
+										"{{fhir}}"
+									],
+									"path": [
+										"CodeSystem"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "ST-02 Give me a list of all available CodeSystems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem?_summary=true",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem"
+							],
+							"query": [
+								{
+									"key": "_summary",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ST-03 Retrieve the definition and concepts of CodeSystem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem?url=http://acme.com/codesystem/tesauro",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/codesystem/tesauro"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ValueSet",
+			"item": [
+				{
+					"name": "ST-04 Give me a list of all available Valuesets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ValueSet",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ST-05 Retrieve the definition of a ValueSet",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ST-06 Add a ValueSet adding rule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"ValueSet\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Intensional ValueSet ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/valueset/intensional\",\r\n    \"version\": \"20231113\",\r\n    \"name\": \"intensional_123\",\r\n    \"title\": \"Intensional ValueSet.\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"compose\": {\r\n        \"include\": [\r\n            {\r\n                \"system\": \"http://acme.com/codesystem/tesauro\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ValueSet",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ST-07 Add a ValueSet declaring 2 codes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"ValueSet\",\r\n    \"text\": {\r\n        \"status\": \"additional\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Extensional ValueSet ACME</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/valueset/extensional\",\r\n    \"version\": \"20230601\",\r\n    \"name\": \"Extensional_123\",\r\n    \"title\": \"Extensional ValueSet\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"compose\": {\r\n        \"include\": [\r\n            {\r\n                \"system\": \"http://acme.com/codesystem/tesauro\",\r\n                \"concept\": [\r\n                    {\r\n                        \"code\": \"01\"\r\n                    },\r\n                    {\r\n                        \"code\": \"05\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ValueSet",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConceptMap",
+			"item": [
+				{
+					"name": "ST-08 Add a new ConceptMap",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceType\": \"ConceptMap\",\r\n    \"id\": \"map103\",\r\n    \"text\": {\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Concept Map Example</div>\"\r\n    },\r\n    \"url\": \"http://acme.com/conceptmap/103\",\r\n    \"version\": \"2023-11-12\",\r\n    \"name\": \"SNOMEDCTToICD10MappingsForInfarction\",\r\n    \"title\": \"SNOMED CT to ICD-10 mappings for infarction\",\r\n    \"status\": \"draft\",\r\n    \"experimental\": true,\r\n    \"date\": \"2023-11-12\",\r\n    \"description\": \"Example rule-based mappings between SNOMED CT to ICD-10 for infarction\",\r\n    \"sourceScopeCanonical\": \"http://snomed.info/sct?fhir_vs\",\r\n    \"group\": [\r\n        {\r\n            \"source\": \"http://snomed.info/sct\",\r\n            \"target\": \"http://hl7.org/fhir/sid/icd-10\",\r\n            \"element\": [\r\n                {\r\n                    \"code\": \"54329005\",\r\n                    \"target\": [\r\n                        {\r\n                            \"code\": \"I21.0\",\r\n                            \"relationship\": \"equal\",\r\n                            \"comment\": \"Acute myocardial infarction of anterior wall (disorder) from Snomed has the same meaning as Acute transmural myocardial infarction of anterior wall in ICD-10.\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"code\": \"54329005\",\r\n                    \"target\": [\r\n                        {\r\n                            \"code\": \"I21\",\r\n                            \"relationship\": \"source-is-narrower-than-target\",\r\n                            \"comment\": \"Acute myocardial infarction of anterior wall (disorder) from Snomed has a narrower meaning than Acute myocardial infarction in ICD-10.\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir}}/ConceptMap/map103",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ConceptMap",
+								"map103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ST-09 Give me a list of all available ConceptMaps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ConceptMap?_summary=true",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ConceptMap"
+							],
+							"query": [
+								{
+									"key": "_summary",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ST-10 Retrieve the definiton of a ConceptMap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ConceptMap?url=http://acme.com/conceptmap/103",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ConceptMap"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/conceptmap/103"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operations",
+			"item": [
+				{
+					"name": "OP-01 search and retrieve a concept Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$lookup?system=http://acme.com/codesystem/tesauro&code=02",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$lookup"
+							],
+							"query": [
+								{
+									"key": "system",
+									"value": "http://acme.com/codesystem/tesauro"
+								},
+								{
+									"key": "code",
+									"value": "02"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-02 validate wether a code belongs to a CodeSystem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$validate-code?url=http://acme.com/codesystem/tesauro&code=02",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$validate-code"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/codesystem/tesauro"
+								},
+								{
+									"key": "code",
+									"value": "02"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-03 validate wether a code belongs to a CodeSystem Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$validate-code?url=http://acme.com/codesystem/tesauro&code=02&display=parkinson",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$validate-code"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/codesystem/tesauro"
+								},
+								{
+									"key": "code",
+									"value": "02"
+								},
+								{
+									"key": "display",
+									"value": "parkinson"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-04 subsumption between two concepts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/CodeSystem/$subsumes?system=http://hl7.org/fhir/sid/icd-10&codeA=A00&codeB=A00.1",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$subsumes"
+							],
+							"query": [
+								{
+									"key": "system",
+									"value": "http://hl7.org/fhir/sid/icd-10"
+								},
+								{
+									"key": "codeA",
+									"value": "A00"
+								},
+								{
+									"key": "codeB",
+									"value": "A00.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-05 expand the intensional valueset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$expand?url=http://acme.com/valueset/intensional",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$expand"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/valueset/intensional"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-06 expand the extensional valueset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$expand?url=http://acme.com/valueset/extensional&IncludeDesignations=true",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$expand"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/valueset/extensional",
+									"description": "i"
+								},
+								{
+									"key": "IncludeDesignations",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-07 filtering an expansion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$expand?url=http://acme.com/valueset/intensional&filter=ins",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$expand"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/valueset/intensional"
+								},
+								{
+									"key": "filter",
+									"value": "ins"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-08 validate wether a code wether belongs to a ValueSet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ValueSet/$validate-code?url=http://acme.com/valueset/intensional&system=http://acme.com/codesystem/tesauro&code=01&display=ataque al corazon",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ValueSet",
+								"$validate-code"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/valueset/intensional"
+								},
+								{
+									"key": "system",
+									"value": "http://acme.com/codesystem/tesauro"
+								},
+								{
+									"key": "code",
+									"value": "01"
+								},
+								{
+									"key": "display",
+									"value": "ataque al corazon"
+								},
+								{
+									"key": "display",
+									"value": "lorem ipsum",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-09 translate a concept to another terminology",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/ConceptMap/$translate?url=http://acme.com/conceptmap/103&code=54329005",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"ConceptMap",
+								"$translate"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "http://acme.com/conceptmap/103"
+								},
+								{
+									"key": "code",
+									"value": "54329005"
+								},
+								{
+									"key": "targetSystem",
+									"value": "http://hl7.org/fhir/sid/icd-10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OP-10 reindex",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{fhir}}/$reindex",
+							"host": [
+								"{{fhir}}"
+							],
+							"path": [
+								"$reindex"
+							],
+							"query": [
+								{
+									"key": "targetSystem",
+									"value": "http://hl7.org/fhir/sid/icd-10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Snowstorm",
+			"item": [
+				{
+					"name": "Capabilty Statement for Terminology Service Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{snow}}/metadata",
+							"host": [
+								"{{snow}}"
+							],
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get the Snomed CodeSystem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{snow}}/CodeSystem",
+							"host": [
+								"{{snow}}"
+							],
+							"path": [
+								"CodeSystem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get the definition for Ibuprofen only product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{snow}}/CodeSystem/$lookup?system=http://snomed.info/sct&code=776287003",
+							"host": [
+								"{{snow}}"
+							],
+							"path": [
+								"CodeSystem",
+								"$lookup"
+							],
+							"query": [
+								{
+									"key": "system",
+									"value": "http://snomed.info/sct"
+								},
+								{
+									"key": "code",
+									"value": "776287003"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "fhir",
+			"value": "http://localhost:8080/fhir",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "snow",
+			"value": "http://34.176.210.29:8000/fhir",
+			"type": "string"
+		},
+		{
+			"key": "fhir",
+			"value": "http://34.176.210.29:8080/fhir",
+			"type": "string"
+		}
+	]
+}
